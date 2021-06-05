@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="Manager_Selling_Program.View.Current_Orders"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Manager_Selling_Program.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="450">
+    <Grid Background="LightGreen">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.25*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Label x:Name="current_orders_Label" Content="Current Orders:" Grid.Row="0" FontSize="14" Background="LightGoldenrodYellow" Margin="10"></Label>
+        <ListBox x:Name="current_orders_ListBox" Grid.Row="1" Margin="20" Background="LightGoldenrodYellow" ItemsSource="{Binding Orders}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <Label Content="{Binding Path=Car_value}" FontSize="11"></Label>
+                        <Label Content="{Binding Path=End_date_string}" FontSize="10"></Label>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</UserControl>
